@@ -2,7 +2,7 @@
 
 cleanup()
 {
-	rm -rf $TMPFILE
+	rm -rf /tmp/tmp.*
 }
 
 trap "echo Don\'t do that" SIGINT
@@ -15,3 +15,5 @@ for LINE in $OSFILES; do
 	echo "FILE $i, $LINE"
 		(( i++ ))
 done
+
+trap cleanup exit 1
