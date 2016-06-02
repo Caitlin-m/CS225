@@ -3,7 +3,8 @@
 #traps ^C
 ctrlctrap()
 {
-	trap "echo Don\'t do that" SIGINT
+	echo "       Well fine be that way"
+	exit 
 }
 
 #cleans up temp files
