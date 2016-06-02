@@ -1,58 +1,41 @@
 #!/bin/bash
 source /Projects/CS225/functions.sh
 
-trap crtlctrap SIGINT
+trap ctrlctrap SIGINT
 
 echo "Please enter you informantion:"
 read INFO
 
 if [[ -z $INFO ]]
-then
-echo "Try entering something next time."
-exit
+	then
+	echo "Try entering something next time."
+	exit
 fi
 
-#ip address
-check_ip()
-{
-	if [[ $INFO =~ ^(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9]) ]]
-	then
-		return "0"
-	else 
-		return "1"
-	fi
-}
+if check_ip $INFO
+then
+	echo "Valid: IP"
+else
+	:
+fi
 
-#social security number
-check_ssn()
-{
-	if [[ $INFO =~ ^([0-9]|[0-9]|[0-9])\-([0-9]|[0-9])\-([0-9]|[0-9]|[0-9]|[0-9]) ]]
-	then
-		return "0"
-	else
-		return "1"
-	fi
-}
+if check_ssn $INFO
+then
+	echo "Valid: SSN"
+else
+	:
+fi
 
-#phone number
-check_pn()
-{
-	if [[ $INFO =~ ^([1-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]) ]]
-	then
-		return "0"
-	else 
-		return "1"
-	fi
-}
+if check_pn $INFO
+then
+	echo "Valid: PHONE NUMBER"
+else
+	:
+fi
 
-#credit card number
-check_ccn()
-{
-	if [[ $INFO =~ ^([0-9][0-9][0-9][0-9])[[:blank:]]([0-9][0-9][0-9][0-9])[[:blank:]]([0-9][0-9][0-9][0-9]) ]]
-	then
-		return "0"
-	else
-		return "1"
-	fi
-}
-
+if check_ccn $INFO
+then
+	echo "Valid: CREDIT CARD NUMBER"
+else
+	:
+fi
