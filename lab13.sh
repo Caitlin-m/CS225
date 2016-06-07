@@ -14,28 +14,28 @@ fi
 
 if check_ip $INFO
 then
-	echo "Valid: IP"
+	echo "VALID: IP"
 else
-	:
+	echo "INVALID: IP"
 fi
 
 if check_ssn $INFO
 then
-	echo "Valid: SSN"
+	echo "VALID: SSN"
 else
-	:
+	echo "INVALID: SSN"
 fi
 
 if check_pn $INFO
 then
-	echo "Valid: PHONE NUMBER"
+	echo "VALID: PHONE NUMBER"
 else
-	:
+	echo "INVALID: PHONE NUMBER"
 fi
 
 if check_ccn $INFO
 then
-	echo "Valid: CREDIT CARD NUMBER"
+	echo "VALID: CREDIT CARD NUMBER"
 else
-	:
+	echo "INVALID: CREDIT CARD NUMBER"
 fi
