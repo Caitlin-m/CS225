@@ -1,6 +1,8 @@
 #!/bin/bash
-
-# Checks UID if root says it's insucre to run this script, if not displays size of home directory
+#-------------------------------------------------------------------------------
+#Checks the UID, if 0 or less than 500, says it's unsicure to run this script,
+#if not displays size of home directory
+#-------------------------------------------------------------------------------
 
 #checks if it's run by root, if true exits
 if [[ "$(id -u)" = "0" ]]
@@ -18,7 +20,7 @@ then
 		exit 1
 fi
 
-#check if UID equils or is greater than 500, if true displays size of home directory
+#checks if UID equil to or greater than 500, if true displays size of home directory
 if [[ "$(id -u)" -ge "500" ]]
 
 then
