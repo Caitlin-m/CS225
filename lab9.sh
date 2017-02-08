@@ -5,7 +5,7 @@ while getopts :dvhn:l: OPT ;do
 		d) set -x;;
 		v) echo "VERBOSE variable is now set to true" 
 				vision=true;;
-		h) echo "LAB9.SH OPPTIONS:
+		h) echo "LAB9.SH OPTIONS:
 			-d 	turns on debugging
 			-v 	sets verbose to true
 			-h 	prints help message
