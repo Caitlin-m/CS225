@@ -3,7 +3,7 @@
 #traps ^C
 ctrlctrap()
 {
-	echo "       Well fine be that way"
+	echo "Well fine be that way"
 	exit 
 }
 
