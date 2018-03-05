@@ -1,5 +1,5 @@
 #!/bin/bash
-souce /Projects/CS225/finalsfunctions.sh
+source /Projects/CS225/finalsfunctions.sh
 
 trap CtrlC SIGNIT
 
